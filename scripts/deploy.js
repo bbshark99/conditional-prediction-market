@@ -55,12 +55,18 @@ async function main() {
   await hre.run("verify:verify", {
     address: lmsrMarketMaker.address,
     constructorArguments: [],
+    libraries: {
+      Fixed192x64Math: fixed192x64Math.address,
+    },
   });
 
   // LMSRMarketMakerFactory contract verification
   await hre.run("verify:verify", {
     address: lmsrMarketMakerFactory.address,
     constructorArguments: [],
+    libraries: {
+      Fixed192x64Math: fixed192x64Math.address,
+    },
   });
 }
 
