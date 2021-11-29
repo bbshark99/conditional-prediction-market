@@ -1,0 +1,21 @@
+{
+  "networkId": 4,
+  "lmsrAddress": "0x031a59D7Bc97431F76980C6510E8F7D61Dac1e64",
+  "markets": [
+    {
+      "questionId": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "title": "ETH will cross 10k at end of 2021",
+      "outcomes": [
+        {
+          "title": "Long",
+          "short": "Long"
+        },
+        {
+          "title": "Short",
+          "short": "Short"
+        }
+      ]
+    }
+  ],
+  "network": "local"
+}
