@@ -1,6 +1,6 @@
 {
-  "networkId": 4,
-  "lmsrAddress": "0x031a59D7Bc97431F76980C6510E8F7D61Dac1e64",
+  "networkId": 137,
+  "lmsrAddress": "0x759ff4b26Fc920518D86D6b7B57910403ef28FD1",
   "markets": [
     {
       "questionId": "0x0000000000000000000000000000000000000000000000000000000000000001",

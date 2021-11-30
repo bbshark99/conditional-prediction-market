@@ -55,7 +55,27 @@ module.exports = {
         host: '127.0.0.1',
         port: 8545,
         network_id: '*',
-      }
+      },
+      polygon: {
+        provider: () =>
+          new HDWalletProvider(
+            mnemonic,
+            `https://polygon-rpc.com`
+          ),
+        network_id: '137',
+        gasPrice: 100000000000,
+        skipDryRun: true
+      },
+      mumbai: {
+        provider: () =>
+          new HDWalletProvider(
+            mnemonic,
+            `https://rpc-mumbai.maticvigil.com/v1/0799d5bc18a0549f82ef51f9a597b6ccda1de2b9`
+          ),
+        network_id: '80001',
+        gasPrice: 30000000002,
+        skipDryRun: true
+      },
     },
     ...[
       ['mainnet', '1', 10000000002],
@@ -104,5 +124,11 @@ module.exports = {
        },
       }
     }
+  },
+  plugins: [
+    'truffle-plugin-verify'
+  ],
+  api_keys: {
+    polygonscan: process.env.REACT_APP_POLYGONSCAN_API_KEY || 'REACT_APP_POLYGONSCAN_API_KEY',
   }
 }
