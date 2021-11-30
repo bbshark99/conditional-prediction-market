@@ -1,18 +1,18 @@
 {
-  "networkId": 1581350973751,
-  "lmsrAddress": "0x98036b9Fca2DdA0e94BC10cdc6Ea6cA0a53B6C0A",
+  "networkId": 80001,
+  "lmsrAddress": "0xA2a7AF109A938E012Aa1A2Fd4ed8c4b99E0A1676",
   "markets": [
     {
-      "questionId": "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684333",
-      "title": "Will the summer 2020 in Germany break again weather records? ",
+      "questionId": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "title": "ETH will cross 10k at end of 2021",
       "outcomes": [
         {
-          "title": "Yes",
-          "short": "Yes"
+          "title": "Long",
+          "short": "Long"
         },
         {
-          "title": "No",
-          "short": "No"
+          "title": "Short",
+          "short": "Short"
         }
       ]
     }

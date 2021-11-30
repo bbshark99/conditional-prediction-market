@@ -24,7 +24,7 @@ const App: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Derived Conditional Token</h1>
+      <h1>Derived Conditional Token (Polygon)</h1>
       {process.env.REACT_APP_ORACLE_ADDRESS && process.env.REACT_APP_OPERATOR_ADDRESS ? (
         <>
           <Web3ConnectButton account={account} setProviderData={setProviderData} />

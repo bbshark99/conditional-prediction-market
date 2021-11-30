@@ -69,6 +69,8 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
       )
       const positionId = getPositionId(collateral.address, collectionId)
       const probability = await marketMakersRepo.calcMarginalPrice(outcomeIndex)
+
+      console.log('DEBUG-', { positionId });
       const balance = await conditionalTokensRepo.balanceOf(account, positionId)
       const payoutNumerator = await conditionalTokensRepo.payoutNumerators(
         conditionId,

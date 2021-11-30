@@ -5,7 +5,7 @@ import {ERC20Detailed} from "openzeppelin-solidity/contracts/token/ERC20/ERC20De
 import {ERC20Burnable} from "openzeppelin-solidity/contracts/token/ERC20/ERC20Burnable.sol";
 
 contract DerivedToken is ERC20, ERC20Detailed, ERC20Burnable {
-    constructor(uint256 initialSupply) ERC20Detailed("DerivedToken", "USDx", 18) public {
+    constructor(uint256 initialSupply) public ERC20Detailed("DerivedToken", "USDx", 18) {
         _mint(msg.sender, initialSupply * 1e18);
     }
 }
