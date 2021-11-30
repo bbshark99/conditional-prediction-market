@@ -40,6 +40,7 @@ class MarketMakersRepo {
   }
 
   calcNetCost = async (outcomeTokenAmounts: number[]) => {
+    console.log('DEBUG-outcomeTokenAmounts', { outcomeTokenAmounts });
     return this.lmsrMarketMaker.calcNetCost(outcomeTokenAmounts)
   }
 

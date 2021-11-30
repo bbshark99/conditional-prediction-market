@@ -5,11 +5,11 @@ module.exports = [
     outcomes: [
       {
         title: "Long",
-        short: "Long"
+        short: "L"
       },
       {
         title: "Short",
-        short: "Short"
+        short: "S"
       }
     ]
   }
