@@ -40,7 +40,6 @@ class MarketMakersRepo {
   }
 
   calcNetCost = async (outcomeTokenAmounts: number[]) => {
-    console.log('DEBUG-outcomeTokenAmounts', { outcomeTokenAmounts });
     return this.lmsrMarketMaker.calcNetCost(outcomeTokenAmounts)
   }
 
@@ -48,11 +47,9 @@ class MarketMakersRepo {
     return this.lmsrMarketMaker.calcMarginalPrice(outcomeIndex)
   }
 
-  trade = async (tradeAmounts: number[], collateralLimit: number, from: string) => {
+  trade = async (tradeAmounts: any[], collateralLimit: number, from: string) => {
     return this.lmsrMarketMaker.trade(tradeAmounts, collateralLimit, { from })
   }
-
-  // ...
 }
 
 export default MarketMakersRepo

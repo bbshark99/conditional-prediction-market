@@ -70,7 +70,6 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
       const positionId = getPositionId(collateral.address, collectionId)
       const probability = await marketMakersRepo.calcMarginalPrice(outcomeIndex)
 
-      console.log('DEBUG-', { positionId });
       const balance = await conditionalTokensRepo.balanceOf(account, positionId)
       const payoutNumerator = await conditionalTokensRepo.payoutNumerators(
         conditionId,
@@ -113,7 +112,7 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
       { length: marketInfo.outcomes.length },
       (value: any, index: number) =>
         index === selectedOutcomeToken ? formatedAmount : new BigNumber(0),
-    )
+    ).map(value => value.toString())
 
     const cost = await marketMakersRepo.calcNetCost(outcomeTokenAmounts)
 
@@ -144,8 +143,8 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
     }
 
     const outcomeTokenAmounts = Array.from({ length: marketInfo.outcomes.length }, (v, i) =>
-      i === selectedOutcomeToken ? formatedAmount.negated() : new BigNumber(0),
-    )
+      i === selectedOutcomeToken ? formatedAmount : new BigNumber(0),
+    ).map(value => value.toString())
     const profit = (await marketMakersRepo.calcNetCost(outcomeTokenAmounts)).neg()
 
     const tx = await marketMakersRepo.trade(outcomeTokenAmounts, profit, account)
