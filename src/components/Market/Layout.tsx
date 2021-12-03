@@ -137,7 +137,7 @@ const OracleActions: React.FC<OracleActionsProps> = ({ isMarketClosed, marketInf
     <div className={styles.actions}>
       {marketInfo.outcomes.map((outcome: any, index: number) => (
         <Button
-          key={outcome.short}
+          key={index}
           variant="contained"
           onClick={() => resolve(index)}
           disabled={!isMarketClosed}

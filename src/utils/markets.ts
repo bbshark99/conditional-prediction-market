@@ -18,3 +18,7 @@ export const getPositionId = (collateralToken: string, collectionId: string) => 
     { t: 'bytes32', v: collectionId },
   )
 }
+
+export const getHexFromNumber = (num: number) => {
+  return `0x${(num * Math.pow(10, 18)).toString(16)}`
+};
