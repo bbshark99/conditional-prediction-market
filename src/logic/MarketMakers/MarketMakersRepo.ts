@@ -1,55 +1,63 @@
-const assert = require('assert')
+const assert = require("assert");
 
 class MarketMakersRepo {
-  lmsrMarketMaker: any
-  collateralToken: any
+  lmsrMarketMaker: any;
+  collateralToken: any;
 
   constructor(contracts: any) {
-    assert(contracts, '"contracts" is required')
+    assert(contracts, '"contracts" is required');
 
-    this.lmsrMarketMaker = contracts.lmsrMarketMaker
-    this.collateralToken = contracts.collateralToken
+    this.lmsrMarketMaker = contracts.lmsrMarketMaker;
+    this.collateralToken = contracts.collateralToken;
   }
 
   getAddress = async () => {
-    return this.lmsrMarketMaker.address
-  }
+    return this.lmsrMarketMaker.address;
+  };
 
   getCollateralToken = async () => {
-    return this.collateralToken
-  }
+    return this.collateralToken;
+  };
 
   conditionIds = async (index: number) => {
-    return this.lmsrMarketMaker.conditionIds(index)
-  }
+    return this.lmsrMarketMaker.conditionIds(index);
+  };
 
   owner = async () => {
-    return this.lmsrMarketMaker.owner()
-  }
+    return this.lmsrMarketMaker.owner();
+  };
 
   funding = async () => {
-    return this.lmsrMarketMaker.funding()
-  }
+    return this.lmsrMarketMaker.funding();
+  };
+
+  fee = async () => {
+    return this.lmsrMarketMaker.fee();
+  };
 
   stage = async () => {
-    return this.lmsrMarketMaker.stage()
-  }
+    return this.lmsrMarketMaker.stage();
+  };
 
   close = async (from: string) => {
-    return this.lmsrMarketMaker.close({ from })
-  }
+    return this.lmsrMarketMaker.close({ from });
+  };
 
   calcNetCost = async (outcomeTokenAmounts: number[]) => {
-    return this.lmsrMarketMaker.calcNetCost(outcomeTokenAmounts)
-  }
+    return this.lmsrMarketMaker.calcNetCost(outcomeTokenAmounts);
+  };
 
   calcMarginalPrice = async (outcomeIndex: number) => {
-    return this.lmsrMarketMaker.calcMarginalPrice(outcomeIndex)
-  }
+    return this.lmsrMarketMaker.calcMarginalPrice(outcomeIndex);
+  };
 
-  trade = async (tradeAmounts: any[], collateralLimit: number, from: string) => {
-    return this.lmsrMarketMaker.trade(tradeAmounts, collateralLimit, { from })
-  }
+  trade = async (
+    tradeAmounts: any[],
+    collateralLimit: number,
+    from: string
+  ) => {
+    return this.lmsrMarketMaker.trade(tradeAmounts, collateralLimit, { from });
+  };
 }
 
-export default MarketMakersRepo
+export default MarketMakersRepo;

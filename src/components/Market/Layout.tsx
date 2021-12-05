@@ -170,6 +170,12 @@ const Layout: React.FC<LayoutProps> = ({
         <>
           <h2>{marketInfo.title}</h2>
           <p>State: {marketInfo.stage}</p>
+          <p>Funding: {marketInfo.funding} {marketInfo.collateral.symbol}</p>
+          <p>Fee: {marketInfo.fee}</p>
+          <p>QuestionId: {marketInfo.questionId}</p>
+          <p>ConditionId: {marketInfo.conditionId}</p>
+          <p>Payout Denominator: {marketInfo.payoutDenominator}</p>
+
           <TradingForm
             isMarketClosed={isMarketClosed}
             marketInfo={marketInfo}

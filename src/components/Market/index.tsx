@@ -56,6 +56,10 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
     )
     const payoutDenominator = await conditionalTokensRepo.payoutDenominator(conditionId)
 
+    // Get Funding info
+    const funding = await marketMakersRepo.funding();
+    const fee = await marketMakersRepo.fee();
+
     const outcomes = []
     for (let outcomeIndex = 0; outcomeIndex < markets.markets[0].outcomes.length; outcomeIndex++) {
       const indexSet = (outcomeIndex === 0
@@ -96,7 +100,13 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
       stage: MarketStage[await marketMakersRepo.stage()],
       questionId: markets.markets[0].questionId,
       conditionId: conditionId,
-      payoutDenominator: payoutDenominator,
+      payoutDenominator: payoutDenominator.toString(),
+      funding: (new BigNumber(funding).dividedBy(Math.pow(10, collateral.decimals))).toString(),
+      fee: (new BigNumber(fee)).toString(),
+      collateral: {
+        name: collateral.name,
+        symbol: collateral.symbol,
+      },
     }
 
     setMarketInfo(marketData)
