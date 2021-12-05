@@ -169,8 +169,12 @@ const Layout: React.FC<LayoutProps> = ({
       {isConditionLoaded ? (
         <>
           <h2>{marketInfo.title}</h2>
+          <h5>Resolver: {marketInfo.resolver}</h5>
+          <h5>Deployer: {marketInfo.deployer}</h5>
           <p>State: {marketInfo.stage}</p>
           <p>Funding: {marketInfo.funding} {marketInfo.collateral.symbol}</p>
+          <p>Liquidity: {marketInfo.liquidity} {marketInfo.collateral.symbol}</p>
+          <p>Trade Volume: {marketInfo.volume} {marketInfo.collateral.symbol}</p>
           <p>Fee: {marketInfo.fee}</p>
           <p>QuestionId: {marketInfo.questionId}</p>
           <p>ConditionId: {marketInfo.conditionId}</p>

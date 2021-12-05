@@ -59,6 +59,7 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
     // Get Funding info
     const funding = await marketMakersRepo.funding();
     const fee = await marketMakersRepo.fee();
+    const liquidity = await collateral.contract.balanceOf(conditionalTokensRepo.conditionalTokens.address);
 
     const outcomes = []
     for (let outcomeIndex = 0; outcomeIndex < markets.markets[0].outcomes.length; outcomeIndex++) {
@@ -96,13 +97,17 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
     const marketData = {
       lmsrAddress: markets.lmsrAddress,
       title: markets.markets[0].title,
+      deployer: process.env.REACT_APP_OPERATOR_ADDRESS,
+      resolver: process.env.REACT_APP_ORACLE_ADDRESS,
+      volume: 0,
       outcomes,
       stage: MarketStage[await marketMakersRepo.stage()],
       questionId: markets.markets[0].questionId,
       conditionId: conditionId,
       payoutDenominator: payoutDenominator.toString(),
-      funding: (new BigNumber(funding).dividedBy(Math.pow(10, collateral.decimals))).toString(),
+      funding: (new BigNumber(funding).dividedBy(Math.pow(10, collateral.decimals))).toFixed(2),
       fee: (new BigNumber(fee)).toString(),
+      liquidity: (new BigNumber(liquidity).dividedBy(Math.pow(10, collateral.decimals))).toFixed(2),
       collateral: {
         name: collateral.name,
         symbol: collateral.symbol,
