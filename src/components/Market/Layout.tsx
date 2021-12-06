@@ -86,7 +86,7 @@ const TradingForm: React.FC<TradingFormProps> = ({
           />
           <div className={styles.outcomeInfo}>Probability: {outcome.probability.toString()}%</div>
           <div className={styles.outcomeInfo}>
-            My balance: {outcome.balance.toFixed(5).toString()}
+            My Conditional Token balance: {outcome.balance.toFixed(5).toString()}
           </div>
         </div>
       ))}
