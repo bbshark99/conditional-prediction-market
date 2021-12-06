@@ -29752,6 +29752,18 @@
     "version": "0.5.10+commit.5a6ea5b1.Emscripten.clang"
   },
   "networks": {
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0xf4894cfd36D1D5fe64792ba48527b406b72560D2",
+      "transactionHash": "0x77e2dda068ac1217cef17fbd8977bb6604ba11cc45428b84920e4b9de02d9b82"
+    },
+    "97": {
+      "events": {},
+      "links": {},
+      "address": "0xB728B1754027408F67E6442d7F9B3A2d72A3dB22",
+      "transactionHash": "0xf88024df8e1823fef493129ffe4872d516fe128dcba80f5b30dc9a8fec4933aa"
+    },
     "137": {
       "events": {},
       "links": {},
@@ -29760,7 +29772,7 @@
     }
   },
   "schemaVersion": "3.4.2",
-  "updatedAt": "2021-11-30T15:56:44.239Z",
+  "updatedAt": "2021-12-05T14:40:01.945Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Alan Lu - <alan.lu@gnosis.pm>Stefan George - <stefan@gnosis.pm>",
