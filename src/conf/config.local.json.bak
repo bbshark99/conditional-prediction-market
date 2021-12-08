@@ -1,6 +1,6 @@
 {
-  "networkId": 137,
-  "lmsrAddress": "0x759ff4b26Fc920518D86D6b7B57910403ef28FD1",
+  "networkId": 4,
+  "lmsrAddress": "0xf590470316a91E52ce4719336C1e834d12Eba0F1",
   "markets": [
     {
       "questionId": "0x0000000000000000000000000000000000000000000000000000000000000001",
@@ -17,5 +17,5 @@
       ]
     }
   ],
-  "network": "polygon"
+  "network": "local"
 }

@@ -35,8 +35,8 @@ class MarketMakersRepo {
     return this.lmsrMarketMaker.fee();
   };
 
-  volume = async () => {
-    return this.lmsrMarketMaker.volume();
+  tradeVolume = async () => {
+    return this.lmsrMarketMaker.tradeVolume();
   };
 
   stage = async () => {

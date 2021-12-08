@@ -174,7 +174,7 @@ const Layout: React.FC<LayoutProps> = ({
           <p>State: {marketInfo.stage}</p>
           <p>Funding: {marketInfo.funding} {marketInfo.collateral.symbol}</p>
           <p>Liquidity: {marketInfo.liquidity} {marketInfo.collateral.symbol}</p>
-          <p>Trade Volume: {marketInfo.volume} {marketInfo.collateral.symbol}</p>
+          <p>Trade Volume: {marketInfo.tradeVolume} {marketInfo.collateral.symbol}</p>
           <p>Fee: {marketInfo.fee}</p>
           <p>QuestionId: {marketInfo.questionId}</p>
           <p>ConditionId: {marketInfo.conditionId}</p>

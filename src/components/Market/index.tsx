@@ -57,10 +57,12 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
     const payoutDenominator = await conditionalTokensRepo.payoutDenominator(conditionId)
 
     // Get Funding info
-    const volume = await marketMakersRepo.volume();
+    const tradeVolume = await marketMakersRepo.tradeVolume();
     const funding = await marketMakersRepo.funding();
     const fee = await marketMakersRepo.fee();
     const liquidity = await collateral.contract.balanceOf(conditionalTokensRepo.conditionalTokens.address);
+
+    console.log('DEBUG-tradeVolume', { tradeVolume });
 
     const outcomes = []
     for (let outcomeIndex = 0; outcomeIndex < markets.markets[0].outcomes.length; outcomeIndex++) {
@@ -100,7 +102,7 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
       title: markets.markets[0].title,
       deployer: process.env.REACT_APP_OPERATOR_ADDRESS,
       resolver: process.env.REACT_APP_ORACLE_ADDRESS,
-      volume: (new BigNumber(volume).dividedBy(Math.pow(10, collateral.decimals))).toFixed(2),
+      tradeVolume: (new BigNumber(tradeVolume).dividedBy(Math.pow(10, collateral.decimals))).toFixed(2),
       outcomes,
       stage: MarketStage[await marketMakersRepo.stage()],
       questionId: markets.markets[0].questionId,
