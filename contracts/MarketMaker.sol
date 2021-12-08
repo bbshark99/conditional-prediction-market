@@ -37,10 +37,10 @@ contract MarketMaker is Ownable, ERC1155TokenReceiver {
     uint public atomicOutcomeSlotCount;
     uint64 public fee;
     uint public funding;
-    uint public volume;
     Stage public stage;
     Whitelist public whitelist;
 
+    uint public volume;
     uint[] outcomeSlotCounts;
     bytes32[][] collectionIds;
     uint[] positionIds;
@@ -188,9 +188,6 @@ contract MarketMaker is Ownable, ERC1155TokenReceiver {
                 collateralToken.approve(address(pmSystem), uint(outcomeTokenNetCost))
             );
 
-            // Calculating Trade Volumes
-            volume.add(uint(outcomeTokenNetCost));
-
             splitPositionThroughAllConditions(uint(outcomeTokenNetCost));
         }
 
@@ -211,6 +208,13 @@ contract MarketMaker is Ownable, ERC1155TokenReceiver {
             mergePositionsThroughAllConditions(uint(-outcomeTokenNetCost));
         }
 
+        // Calculating Trade Volumes
+        if (outcomeTokenNetCost > 0) {
+            volume.add(uint(outcomeTokenNetCost));
+        } else {
+            volume.add(uint(-outcomeTokenNetCost));
+        }
+
         emit AMMOutcomeTokenTrade(msg.sender, outcomeTokenAmounts, outcomeTokenNetCost, uint(fees));
 
         touched = false;
@@ -226,9 +230,6 @@ contract MarketMaker is Ownable, ERC1155TokenReceiver {
 
         if(netCost < 0) {
             require(collateralToken.transfer(msg.sender, uint(-netCost)));
-
-            // Calculating Trade Volumes
-            volume.add(uint(-netCost));
         }
     }
 
