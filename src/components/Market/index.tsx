@@ -86,7 +86,7 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
         title: markets.markets[0].outcomes[outcomeIndex].title,
         probability: new BigNumber(probability)
           .dividedBy(Math.pow(2, 64))
-          .multipliedBy(100)
+          // .multipliedBy(100)
           .toFixed(2),
         balance: new BigNumber(balance).dividedBy(Math.pow(10, collateral.decimals)),
         payoutNumerator: payoutNumerator,
