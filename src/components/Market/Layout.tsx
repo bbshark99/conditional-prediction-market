@@ -84,7 +84,7 @@ const TradingForm: React.FC<TradingFormProps> = ({
             control={<Radio color="primary" />}
             label={outcome.title}
           />
-          <div className={styles.outcomeInfo}>Probability: {outcome.probability.toString()}%</div>
+          <div className={styles.outcomeInfo}>Price: {outcome.probability.toString()}$</div>
           <div className={styles.outcomeInfo}>
             My Conditional Token balance: {outcome.balance.toFixed(5).toString()}
           </div>
