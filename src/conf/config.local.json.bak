@@ -1,6 +1,6 @@
 {
-  "networkId": 80001,
-  "lmsrAddress": "0xA2a7AF109A938E012Aa1A2Fd4ed8c4b99E0A1676",
+  "networkId": 4,
+  "lmsrAddress": "0xf590470316a91E52ce4719336C1e834d12Eba0F1",
   "markets": [
     {
       "questionId": "0x0000000000000000000000000000000000000000000000000000000000000001",
@@ -8,11 +8,11 @@
       "outcomes": [
         {
           "title": "Long",
-          "short": "Long"
+          "short": "L"
         },
         {
           "title": "Short",
-          "short": "Short"
+          "short": "S"
         }
       ]
     }

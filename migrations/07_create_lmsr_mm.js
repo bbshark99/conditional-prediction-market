@@ -62,5 +62,7 @@ module.exports = function(deployer) {
       lmsrAddress,
       markets
     });
+
+    console.log(`npx truffle run verify ConditionalTokens LMSRMarketMakerFactory DerivedToken Fixed192x64Math --network`);
   });
 };
